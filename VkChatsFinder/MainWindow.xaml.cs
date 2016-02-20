@@ -48,6 +48,7 @@ namespace VkChatsFinder
 
 			HideScriptErrors(web_browser, true);
 
+			changeVis(btn_openall, false);
 			visBrowser(false);
 			visTable(false);
 			visLoader(false);
@@ -95,14 +96,57 @@ namespace VkChatsFinder
 					logAction("Stopped, max id: " + this.counter);
 					visLoader(false);
 					visTable(true);
+					generateOpenAllBtn();
 				}, 
 				TaskScheduler.FromCurrentSynchronizationContext()
 			);
 		}
 
+		/* Reset btn */
 		private void btn_clear_Click(object sender, RoutedEventArgs e)
 		{
 			clearToken(sender, e);
+		}
+
+		/* Function for creating url for all chats */
+		private string generateAllChats(int min, int max)
+		{
+			string url = "https://vk.com/im?sel=c" +min + "&peers=c";
+			for (int j = min; j < max; j++)
+			{
+				url += j + "_c";
+			}
+			return url;
+		}
+
+		private void generateOpenAllBtn()
+		{
+			//@TODO: fix this to not open unexistable chats
+			List<string> urls = new List<string>();
+
+			for (int j = 1; j < this.counter; j = j + 40)
+			{
+				urls.Add(generateAllChats(j, j + 40));
+			}
+
+			btn_openall.Tag = urls;
+
+			changeVis(btn_openall, true);
+		}
+
+		private void btn_openall_Click(object sender, RoutedEventArgs e)
+		{
+			foreach (string url in btn_openall.Tag as List<string>)
+			{
+				//This needed to not open empty DELETED chat with chat_id 2000000
+				string u = url;
+				if (url.EndsWith("_c"))
+				{
+					u = url.Substring(0, url.Length - 2);
+				}
+
+				System.Diagnostics.Process.Start(u);
+			}
 		}
 
 		/* When browser loaded web page - check if url contents access_token */
@@ -181,6 +225,8 @@ namespace VkChatsFinder
 
 			//Hide loader(to prevent bugs)
 			visStart(false);
+			visLoader(false);
+			changeVis(btn_openall, false);
 
 			logAction("Logged out");
 			btn_login.Content = "Login";
@@ -203,6 +249,7 @@ namespace VkChatsFinder
 			this.limit = 5000;
 			this.offset = 200;
 
+			changeVis(btn_openall, false);
 			visTable(false); //fixed bug: user start app -> press search btn -> then login btn(loader image over datagrid)
 		}
 	}

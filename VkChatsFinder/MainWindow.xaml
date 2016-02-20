@@ -34,6 +34,7 @@
 
         </Grid>
         <Button x:Name="btn_clear" Content="Reset" HorizontalAlignment="Left" Height="44" Margin="694,10,0,0" VerticalAlignment="Top" Width="84" Click="btn_clear_Click"/>
+        <Button x:Name="btn_openall" Content="Open all" HorizontalAlignment="Left" Height="44" Margin="605,10,0,0" VerticalAlignment="Top" Width="84" Click="btn_openall_Click"/>
 
 
     </Grid>

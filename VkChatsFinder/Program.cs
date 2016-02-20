@@ -9,6 +9,7 @@ using System.Windows;
 
 namespace VkChatsFinder
 {
+	/* This needed for loading embed .dll */
 	internal static class Program
 	{
 		[STAThread]
@@ -31,8 +32,6 @@ namespace VkChatsFinder
 
 			var container = Assembly.GetExecutingAssembly();
 			var path = new AssemblyName(name).Name + ".dll";
-
-
 
 			using (var stream = container.GetManifestResourceStream(path))
 			{

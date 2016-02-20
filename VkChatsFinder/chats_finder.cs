@@ -25,12 +25,6 @@ namespace VkChatsFinder
 			return result;
 		}
 
-
-
-
-		
-
-
 		/* Main function for chats search */
 		private bool checkChat(int chat_id)
 		{

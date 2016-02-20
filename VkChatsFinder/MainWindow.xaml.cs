@@ -29,6 +29,13 @@ namespace VkChatsFinder
 	/// </summary>
 	/// 
 
+	/**
+	 * 
+	 * All info:
+	 *		https://github.com/littleguga/VkChatsFinder/
+	 * 
+	 */
+
 	public partial class MainWindow : Window
 	{
 		internal VkApi vkApi = new VkApi("3219730");

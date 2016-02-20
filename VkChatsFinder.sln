@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VkChatsFinder", "VkChatsFinder\VkChatsFinder.csproj", "{8F2D3652-257B-4B53-B3D2-C775E235D55B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F2D3652-257B-4B53-B3D2-C775E235D55B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2D3652-257B-4B53-B3D2-C775E235D55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2D3652-257B-4B53-B3D2-C775E235D55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2D3652-257B-4B53-B3D2-C775E235D55B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

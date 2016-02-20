@@ -1,5 +1,7 @@
 # VK Chats Finder
 
+* Download latest version from /latest/
+
 ## Usage: 
 
 * Log in VK

@@ -23,7 +23,7 @@
         </DataGrid>
         <Label x:Name="login_alert" Content="You need to login " HorizontalAlignment="Left" Height="35" Margin="332,19,0,0" VerticalAlignment="Top" Width="342" TabIndex="4"/>
 
-        <Image x:Name="img_loader" gif:ImageBehavior.AnimatedSource="D:\Development\c_sharp\Projects\VkChatsFinder\VkChatsFinder\loader.gif" 
+        <Image x:Name="img_loader" gif:ImageBehavior.AnimatedSource="pack://application:,,,/loader.gif" 
                Width="256px"
                Height="256px" Panel.ZIndex="1"
                />
